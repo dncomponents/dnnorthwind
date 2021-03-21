@@ -1,0 +1,26 @@
+<nav class="navbar sticky-top navbar-light bg-dark text-white border-bottom px-3">
+    <a class="navbar-brand d-lg-none" href="https://dncomponents.com/">
+        <img src="dnnorthwind/images/logo-mob.svg">
+    </a>
+    <a class="navbar-brand d-none d-lg-inline-block" href="https://dncomponents.com/">
+        <img src="dnnorthwind/images/logoBlack.svg">
+    </a>
+</nav>
+<div class="container-fluid p-0">
+    <div class="row flex-xl-nowrap">
+        <div class="container-fluid">
+            <dn-side-menu addClass="bg-light pt-2 side-cl" ui-field="side">
+                <item content="Northwind" icon="fas fa-shopping-bag">
+                    <item icon="fas fa-chart-line" itemId="dashboard" style="background: red;">Dashboard</item>
+                    <item icon="fas fa-users" itemId="customers">Customers</item>
+                    <item icon="fas fa-user-friends" itemId="employees">Employees</item>
+                    <item icon="fas fa-file" itemId="orders">Orders</item>
+                    <item icon="fas fa-shopping-cart" itemId="products">Products</item>
+                    <item icon="fas fa-balance-scale" itemId="suppliers">Suppliers</item>
+                </item>
+            </dn-side-menu>
+            <main class="col-12 col-md-9 col-xl-10" ui-field="contentWrapper">
+            </main>
+        </div>
+    </div>
+</div>

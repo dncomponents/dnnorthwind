@@ -1,0 +1,59 @@
+<div ui-field="root">
+    <h2>
+        Orders
+    </h2>
+    <dn-table ui-field="ordersTable"></dn-table>
+</div>
+
+<!--product panel-->
+<template ui-field="productPanelTemplate">
+    <div class="row p-3">
+        <div class="col-3">
+            <h5 ui-field="productName"></h5>
+            <h5 ui-field="productCategory"></h5>
+            <i class="fa fa-shopping-basket fa-8x"></i>
+        </div>
+        <div class="col">
+            <h5>In stock</h5>
+            <h5 ui-field="inStockLbl"></h5>
+        </div>
+        <div class="col">
+            <h5>In order</h5>
+            <h5 ui-field="inOrderLbl"></h5>
+        </div>
+        <div class="col">
+            <h5>Reorder</h5>
+            <h5 ui-field="reorderLbl"></h5>
+        </div>
+        <div class="col">
+            <h5>QTY. per unit</h5>
+            <h5 ui-field="quantityPerUnitLbl"></h5>
+        </div>
+        <div class="col"></div>
+    </div>
+</template>
+<template ui-field="shippingPanelTemplate">
+    <div class="row p-3">
+        <div class="col">
+            <div class="card">
+                <ul class="list-group list-group-flush ">
+                    <li class="list-group-item" style="border: none;">
+                        <strong>Name</strong> : <span ui-field="name"></span>
+                    </li>
+                    <li class="list-group-item" style="border: none">
+                        <strong>Country</strong>: <span ui-field="country"></span>
+                    </li>
+                    <li class="list-group-item" style="border: none">
+                        <strong>City</strong>: <span ui-field="city"></span>
+                    </li>
+                    <li class="list-group-item" style="border: none">
+                        <strong>Address</strong>: <span ui-field="address"></span>
+                    </li>
+                    <li class="list-group-item" style="border: none">
+                        <strong>Postal code</strong>: <span ui-field="postalCode"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</template>

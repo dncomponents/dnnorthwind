@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+    <inherits name="com.google.gwt.core.Core"/>
+    <inherits name="elemental2.core.Core"/>
+    <inherits name="elemental2.dom.Dom"/>
+    <inherits name="com.dncomponents.CoreUi"/>
+    <inherits name="com.dncomponents.bootstrap.Bootstrap"/>
+
+    <source path=""/>
+    <public path="public"/>
+
+    <entry-point class="com.dncomponents.northwind.App"/>
+
+    <!-- Only support recent browsers -->
+    <set-property name="user.agent" value="ie10,gecko1_8,safari"/>
+</module>
