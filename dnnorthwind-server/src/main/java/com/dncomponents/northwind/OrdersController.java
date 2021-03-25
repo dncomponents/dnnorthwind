@@ -39,9 +39,8 @@ public class OrdersController {
 
     @GetMapping("/stat")
     public List<Map<String, Object>> getOrdersByCountries() {
-        String sql = "select count(*) as value, ship_country as name from orders group by ship_country";
-        List<Map<String, Object>> list = jdbcTemplate.queryForList(sql);
-        return list;
+        return jdbcTemplate.queryForList("select count(*) as value, " +
+                "ship_country as name from orders group by ship_country");
     }
 
     //create or update
