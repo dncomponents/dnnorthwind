@@ -156,7 +156,6 @@ public class EmployeesViewImpl extends AbstractView<EmployeesActivity> implement
         employeesTable.addColumn(firstNameColumn, lastNameColumn,
                 titleColumn, birthDayColumn,
                 hireDayColumn, cityColumn, countryColumn, columnEdit);
-        employeesTable.setControlBar();
         employeesTable.setMultiSorting(true);
     }
 

@@ -48,19 +48,20 @@ public class SuppliersViewImpl extends AbstractView<SuppliersActivity> implement
                             }
                         }));
         //update
-        suppliersTable.addRowValueChangedHandler(event -> presenter.updateSupplier(event.getRow().getModel().unWrap(),
-                new AsyncCallBack<SupplierDTO>() {
-                    @Override
-                    public void onSuccess(SupplierDTO result) {
-                        Dialog.show("Success", "Record updated!");
-                    }
+        suppliersTable.addRowValueChangedHandler(event ->
+                presenter.updateSupplier(event.getRow().getModel().unWrap(),
+                        new AsyncCallBack<SupplierDTO>() {
+                            @Override
+                            public void onSuccess(SupplierDTO result) {
+                                Dialog.show("Success", "Record updated!");
+                            }
 
-                    @Override
-                    public void onFailure(Throwable caught) {
-                        Dialog.show("Error", caught.getMessage());
-                        event.revertChanges();
-                    }
-                }));
+                            @Override
+                            public void onFailure(Throwable caught) {
+                                Dialog.show("Error", caught.getMessage());
+                                event.revertChanges();
+                            }
+                        }));
 
         //remove
         suppliersTable.addRowRemovedHandler(event -> {

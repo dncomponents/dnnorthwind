@@ -5,18 +5,29 @@
     <a class="navbar-brand d-none d-lg-inline-block" href="https://dncomponents.com/">
         <img src="dnnorthwind/images/logoBlack.svg">
     </a>
+
+<!--    <a href="../pricing.html" class="btn btn-outline-secondary">Download</a>-->
+    <dn-dropdown ui-field="languageDd" content="language">
+        <item itemId="english">
+            English
+        </item>
+        <item itemId="german">
+            German
+        </item>
+    </dn-dropdown>
+
 </nav>
 <div class="container-fluid p-0">
     <div class="row flex-xl-nowrap">
         <div class="container-fluid">
             <dn-side-menu addClass="bg-light pt-2 side-cl" ui-field="side">
                 <item content="Northwind" icon="fas fa-shopping-bag">
-                    <item icon="fas fa-chart-line" itemId="dashboard" style="background: red;">Dashboard</item>
-                    <item icon="fas fa-users" itemId="customers">Customers</item>
-                    <item icon="fas fa-user-friends" itemId="employees">Employees</item>
-                    <item icon="fas fa-file" itemId="orders">Orders</item>
-                    <item icon="fas fa-shopping-cart" itemId="products">Products</item>
-                    <item icon="fas fa-balance-scale" itemId="suppliers">Suppliers</item>
+                    <item icon="fas fa-chart-line" itemId="dashboard" style="background: red;">{{dashboard}}</item>
+                    <item icon="fas fa-users" itemId="customers">{{customers}}</item>
+                    <item icon="fas fa-user-friends" itemId="employees">{{employees}}</item>
+                    <item icon="fas fa-file" itemId="orders">{{orders}}</item>
+                    <item icon="fas fa-shopping-cart" itemId="products">{{products}}</item>
+                    <item icon="fas fa-balance-scale" itemId="suppliers">{{suppliers}}</item>
                 </item>
             </dn-side-menu>
             <main class="col-12 col-md-9 col-xl-10" ui-field="contentWrapper">

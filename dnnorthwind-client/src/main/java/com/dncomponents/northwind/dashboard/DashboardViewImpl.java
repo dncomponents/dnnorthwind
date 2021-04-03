@@ -2,6 +2,7 @@ package com.dncomponents.northwind.dashboard;
 
 import com.dncomponents.UiField;
 import com.dncomponents.client.components.core.HtmlBinder;
+import com.dncomponents.client.components.form.Form;
 import com.dncomponents.client.views.appview.AbstractView;
 import elemental2.core.JsObject;
 import elemental2.dom.HTMLCanvasElement;

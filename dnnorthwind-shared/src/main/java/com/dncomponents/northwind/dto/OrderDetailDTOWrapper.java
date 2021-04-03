@@ -68,4 +68,8 @@ public class OrderDetailDTOWrapper {
         return orderDetailDTO;
     }
 
+    @Override
+    public String toString() {
+        return orderDetailDTO.getOrder_id() + "";
+    }
 }

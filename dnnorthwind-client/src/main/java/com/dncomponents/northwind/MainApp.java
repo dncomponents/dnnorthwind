@@ -4,6 +4,7 @@ import com.dncomponents.UiField;
 import com.dncomponents.client.components.AbstractCellComponent;
 import com.dncomponents.client.components.core.HtmlBinder;
 import com.dncomponents.client.components.core.entities.ItemId;
+import com.dncomponents.client.components.dropdown.DropDown;
 import com.dncomponents.client.components.sidemenu.SideMenu;
 import com.dncomponents.client.dom.History;
 import com.dncomponents.client.views.IsElement;
@@ -15,8 +16,16 @@ import com.dncomponents.northwind.employees.EmployeesPlace;
 import com.dncomponents.northwind.orders.OrdersPlace;
 import com.dncomponents.northwind.products.ProductsPlace;
 import com.dncomponents.northwind.suppliers.SuppliersPlace;
+import elemental2.core.JsObject;
+import elemental2.dom.DomGlobal;
+import elemental2.dom.HTMLCanvasElement;
 import elemental2.dom.HTMLElement;
 import elemental2.dom.Node;
+import elemental2.webstorage.Storage;
+import elemental2.webstorage.WebStorageWindow;
+import jsinterop.annotations.JsMethod;
+
+import static jsinterop.annotations.JsPackage.GLOBAL;
 
 public class MainApp implements AcceptsOneElement {
 
@@ -26,13 +35,29 @@ public class MainApp implements AcceptsOneElement {
     public SideMenu<ItemId> side;
     PlaceManager placeManager = new PlaceManager(this);
     HtmlBinder binder = HtmlBinder.get(MainApp.class, this);
+    @UiField
+    DropDown<ItemId> languageDd;
+    Storage storage = WebStorageWindow.of(DomGlobal.window).localStorage;
 
     public MainApp() {
         binder.bind();
         init();
         side.setPlaceManager(placeManager);
         side.expandAll(true);
+        final String language = storage.getItem("language");
+        if (language != null)
+            languageDd.setButtonContent(language);
+        languageDd.addSelectionHandler(event -> {
+                    final String id = event.getSelectedItem().getUserObject().getId();
+                    storage.setItem("language", id);
+                    languageDd.setButtonContent(id);
+                    DomGlobal.location.reload();
+                }
+        );
     }
+
+    @JsMethod(namespace = GLOBAL)
+    public static native void showStatsJs(HTMLCanvasElement canvas, JsObject[] a, String label, String color, String title);
 
     private void init() {
         placeManager.register(CustomersPlace.CustomersPlaceRegister.instance);

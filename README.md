@@ -3,8 +3,10 @@
 The goal of the project is to:
 
 1) Demonstrate Dncomponents UI library capabilities
-2) Show advantage of MVP pattern and elemental 2 browser API.
-3) Promote usage of java language as a frontend choice.
+2) Show advantages of MVP pattern and elemental 2 browser API.
+3) Show how to combine other js libraries using jsinterop (in this case Chart.js)
+4) Give instructions for using DTOs as a lightweight choice for communication with server
+5) Promote usage of java language as a frontend choice.
 
 The project uses The Northwind Microsoft database.
 
@@ -17,9 +19,7 @@ java language and elemental2 library.
 ***Frontend***
 
 * [dncomponents](https://dncomponents.com/index.html) UI library with
-
 * [bootstrap 5](https://getbootstrap.com/) css framework
-
 * [Intellij dncompononents plugin](https://plugins.jetbrains.com/plugin/13486-dn-components)
 * [GWT compiler](http://www.gwtproject.org/)
 * [elemental2](https://github.com/google/elemental2) java browser API library.
