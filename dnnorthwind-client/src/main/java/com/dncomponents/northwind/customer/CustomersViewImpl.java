@@ -18,6 +18,8 @@ import elemental2.dom.HTMLElement;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
+import static com.dncomponents.client.components.core.DnI18e.t;
+
 
 public class CustomersViewImpl extends AbstractView<CustomersActivity> implements CustomersView {
     private static CustomersViewImpl instance;
@@ -109,7 +111,7 @@ public class CustomersViewImpl extends AbstractView<CustomersActivity> implement
                 .setColumnWidth("250px")
                 .setEditable(true)
                 .setValidator(new EmptyValidator<>())
-                .setName("Company Name")
+                .setName(t("company_name"))
                 .build();
 
         ColumnConfig<CustomerDTOWrapper, String> contactNameColumn = new ColumnConfig.Builder<CustomerDTOWrapper, String>()
@@ -118,7 +120,7 @@ public class CustomersViewImpl extends AbstractView<CustomersActivity> implement
                 .setColumnWidth("180px")
                 .setEditable(true)
                 .setClazz(String.class)
-                .setName("Contact Name")
+                .setName(t("contact_name"))
                 .build();
 
         ColumnConfig<CustomerDTOWrapper, String> contactTitleColumn = new ColumnConfig.Builder<CustomerDTOWrapper, String>()
@@ -127,7 +129,7 @@ public class CustomersViewImpl extends AbstractView<CustomersActivity> implement
                 .setColumnWidth("180px")
                 .setEditable(true)
                 .setClazz(String.class)
-                .setName("Contact title")
+                .setName(t("contact_title"))
                 .build();
 
         ColumnConfig<CustomerDTOWrapper, String> addressColumn = new ColumnConfig.Builder<CustomerDTOWrapper, String>()
@@ -136,7 +138,7 @@ public class CustomersViewImpl extends AbstractView<CustomersActivity> implement
                 .setColumnWidth("250px")
                 .setEditable(true)
                 .setClazz(String.class)
-                .setName("Address")
+                .setName(t("address"))
                 .build();
 
         ColumnConfig<CustomerDTOWrapper, String> countryColumn = new ColumnConfig.Builder<CustomerDTOWrapper, String>()
@@ -145,7 +147,7 @@ public class CustomersViewImpl extends AbstractView<CustomersActivity> implement
                 .setColumnWidth("150px")
                 .setEditable(true)
                 .setClazz(String.class)
-                .setName("Country")
+                .setName(t("country"))
                 .build();
 
         ColumnConfig<CustomerDTOWrapper, String> cityColumn = new ColumnConfig.Builder<CustomerDTOWrapper, String>()
@@ -154,13 +156,13 @@ public class CustomersViewImpl extends AbstractView<CustomersActivity> implement
                 .setColumnWidth("150px")
                 .setEditable(true)
                 .setClazz(String.class)
-                .setName("City")
+                .setName(t("city"))
                 .build();
 
         ColumnConfig<CustomerDTOWrapper, String> emailColumn = new ColumnConfig.Builder<CustomerDTOWrapper, String>()
                 .setFieldGetter(customerDTO -> customerDTO.getEmail())
                 .setFieldSetter((customerDTO, s) -> customerDTO.setEmail(s))
-                .setName("Email")
+                .setName(t("email"))
                 .setColumnWidth("220px")
                 .setEditable(true)
                 .setValidator(new Validators<String>()
@@ -173,8 +175,7 @@ public class CustomersViewImpl extends AbstractView<CustomersActivity> implement
         columnEdit.setColumnWidth("90px");
         customersTable.setCellEditMode(true);
         customersTable.addColumn(companyColumn, contactNameColumn, emailColumn,
-                contactNameColumn, contactTitleColumn, addressColumn, countryColumn, cityColumn
-        );
+                contactTitleColumn, addressColumn, countryColumn, cityColumn);
     }
 
     @Override

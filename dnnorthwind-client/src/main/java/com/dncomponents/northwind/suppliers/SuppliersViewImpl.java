@@ -18,6 +18,8 @@ import elemental2.dom.HTMLElement;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
+import static com.dncomponents.client.components.core.DnI18e.t;
+
 public class SuppliersViewImpl extends AbstractView<SuppliersActivity> implements SuppliersView {
 
     private static SuppliersViewImpl instance;
@@ -97,7 +99,7 @@ public class SuppliersViewImpl extends AbstractView<SuppliersActivity> implement
                 .setEditable(true)
                 .setColumnWidth("180px")
                 .setValidator(new EmptyValidator<>())
-                .setName("Company")
+                .setName(t("company"))
                 .build();
 
         ColumnConfig<SupplierDTOWrapper, String> contactNameColumn = new ColumnConfig.Builder<SupplierDTOWrapper, String>()
@@ -106,7 +108,7 @@ public class SuppliersViewImpl extends AbstractView<SuppliersActivity> implement
                 .setColumnWidth("130px")
                 .setEditable(true)
                 .setClazz(String.class)
-                .setName("Contact name")
+                .setName(t("contact_name"))
                 .build();
         ColumnConfig<SupplierDTOWrapper, String> emailColumn = new ColumnConfig.Builder<SupplierDTOWrapper, String>()
                 .setFieldGetter(dto -> dto.getEmail())
@@ -117,7 +119,7 @@ public class SuppliersViewImpl extends AbstractView<SuppliersActivity> implement
                         .add(new EmptyValidator<>(), true)
                         .add(new EmailValidator()))
                 .setClazz(String.class)
-                .setName("Email")
+                .setName(t("email"))
                 .build();
 
         ColumnConfig<SupplierDTOWrapper, String> addressColumn = new ColumnConfig.Builder<SupplierDTOWrapper, String>()
@@ -126,7 +128,7 @@ public class SuppliersViewImpl extends AbstractView<SuppliersActivity> implement
                 .setColumnWidth("150px")
                 .setEditable(true)
                 .setClazz(String.class)
-                .setName("Address")
+                .setName(t("address"))
                 .build();
 
         ColumnConfig<SupplierDTOWrapper, String> cityColumn = new ColumnConfig.Builder<SupplierDTOWrapper, String>()
@@ -135,7 +137,7 @@ public class SuppliersViewImpl extends AbstractView<SuppliersActivity> implement
                 .setColumnWidth("80px")
                 .setEditable(true)
                 .setClazz(String.class)
-                .setName("City")
+                .setName(t("city"))
                 .build();
 
         ColumnEdit<SupplierDTOWrapper> columnEdit = new ColumnEdit<>(SupplierDTOWrapper::new, false);

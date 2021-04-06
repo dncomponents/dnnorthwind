@@ -17,6 +17,8 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+import static com.dncomponents.client.components.core.DnI18e.t;
+
 
 public class EmployeesViewImpl extends AbstractView<EmployeesActivity> implements EmployeesView {
     private static EmployeesViewImpl instance;
@@ -93,7 +95,7 @@ public class EmployeesViewImpl extends AbstractView<EmployeesActivity> implement
                 .setEditable(true)
                 .setColumnWidth("180px")
                 .setValidator(new EmptyValidator<>())
-                .setName("First Name")
+                .setName(t("first_name"))
                 .build();
 
         ColumnConfig<EmployeeDTO, String> lastNameColumn = new ColumnConfig.Builder<EmployeeDTO, String>()
@@ -102,7 +104,7 @@ public class EmployeesViewImpl extends AbstractView<EmployeesActivity> implement
                 .setColumnWidth("180px")
                 .setEditable(true)
                 .setClazz(String.class)
-                .setName("Last Name")
+                .setName(t("last_name"))
                 .build();
 
         ColumnConfig<EmployeeDTO, String> titleColumn = new ColumnConfig.Builder<EmployeeDTO, String>()
@@ -111,7 +113,7 @@ public class EmployeesViewImpl extends AbstractView<EmployeesActivity> implement
                 .setColumnWidth("180px")
                 .setEditable(true)
                 .setClazz(String.class)
-                .setName("Title")
+                .setName(t("title"))
                 .build();
 
         ColumnConfig<EmployeeDTO, Date> birthDayColumn = new ColumnConfig.Builder<EmployeeDTO, Date>()
@@ -120,7 +122,7 @@ public class EmployeesViewImpl extends AbstractView<EmployeesActivity> implement
                 .setColumnWidth("100px")
                 .setEditable(true)
                 .setCellFactory(c -> new TableCellDate<>())
-                .setName("Birth day")
+                .setName(t("birth_day"))
                 .build();
 
         ColumnConfig<EmployeeDTO, Date> hireDayColumn = new ColumnConfig.Builder<EmployeeDTO, Date>()
@@ -130,7 +132,7 @@ public class EmployeesViewImpl extends AbstractView<EmployeesActivity> implement
                 .setCellFactory(c -> new TableCellDate<>())
                 .setEditable(true)
                 .setClazz(String.class)
-                .setName("Hire day")
+                .setName(t("hire_day"))
                 .build();
 
         ColumnConfig<EmployeeDTO, String> cityColumn = new ColumnConfig.Builder<EmployeeDTO, String>()
@@ -139,7 +141,7 @@ public class EmployeesViewImpl extends AbstractView<EmployeesActivity> implement
                 .setColumnWidth("100px")
                 .setEditable(true)
                 .setClazz(String.class)
-                .setName("City")
+                .setName(t("city"))
                 .build();
 
         ColumnConfig<EmployeeDTO, String> countryColumn = new ColumnConfig.Builder<EmployeeDTO, String>()
@@ -148,7 +150,7 @@ public class EmployeesViewImpl extends AbstractView<EmployeesActivity> implement
                 .setColumnWidth("100px")
                 .setEditable(true)
                 .setClazz(String.class)
-                .setName("Country")
+                .setName(t("country"))
                 .build();
 
         ColumnEdit<EmployeeDTO> columnEdit = new ColumnEdit<>(EmployeeDTO::new, false);

@@ -2,6 +2,7 @@
     padding-left: 15px;
     padding-right: 15px;
 }
+
 aside {
     flex: 0 1 320px;
     position: fixed !important;

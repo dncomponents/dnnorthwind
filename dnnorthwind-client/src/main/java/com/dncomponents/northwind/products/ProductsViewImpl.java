@@ -14,6 +14,8 @@ import elemental2.dom.HTMLElement;
 
 import java.util.Arrays;
 
+import static com.dncomponents.client.components.core.DnI18e.t;
+
 public class ProductsViewImpl extends AbstractView<ProductsActivity> implements ProductsView {
     private static ProductsViewImpl instance;
 
@@ -90,7 +92,7 @@ public class ProductsViewImpl extends AbstractView<ProductsActivity> implements 
                 .setEditable(true)
                 .setColumnWidth("200px")
                 .setValidator(new EmptyValidator<>())
-                .setName("Product name")
+                .setName(t("product_name"))
                 .build();
 
         ColumnConfig<ProductDTO, String> quantityColumn = new ColumnConfig.Builder<ProductDTO, String>()
@@ -99,7 +101,7 @@ public class ProductsViewImpl extends AbstractView<ProductsActivity> implements 
                 .setColumnWidth("140px")
                 .setEditable(true)
                 .setClazz(String.class)
-                .setName("Quantity")
+                .setName(t("quantity"))
                 .build();
 
         ColumnConfig<ProductDTO, Double> unitPriceColumn = new ColumnConfig.Builder<ProductDTO, Double>()
@@ -108,7 +110,7 @@ public class ProductsViewImpl extends AbstractView<ProductsActivity> implements 
                 .setColumnWidth("100px")
                 .setEditable(true)
                 .setClazz(Double.class)
-                .setName("Unit Price")
+                .setName(t("unit_price"))
                 .build();
 
         ColumnConfig<ProductDTO, Integer> unitInStockColumn = new ColumnConfig.Builder<ProductDTO, Integer>()
@@ -117,7 +119,7 @@ public class ProductsViewImpl extends AbstractView<ProductsActivity> implements 
                 .setColumnWidth("100px")
                 .setEditable(true)
                 .setClazz(Integer.class)
-                .setName("Units in Stock")
+                .setName(t("units_in_stock"))
                 .build();
 
         ColumnConfig<ProductDTO, Boolean> discontinuedColumn = new ColumnConfig.Builder<ProductDTO, Boolean>()
@@ -127,7 +129,7 @@ public class ProductsViewImpl extends AbstractView<ProductsActivity> implements 
                 .setEditable(true)
                 .setValidator(new EmptyValidator<>())
                 .setClazz(Boolean.class)
-                .setName("Discontinued")
+                .setName(t("discontinued"))
                 .build();
 
         ColumnEdit<ProductDTO> columnEdit = new ColumnEdit<>(ProductDTO::new, false);

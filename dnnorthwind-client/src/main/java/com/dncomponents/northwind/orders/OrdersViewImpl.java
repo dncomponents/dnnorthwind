@@ -3,6 +3,7 @@ package com.dncomponents.northwind.orders;
 import com.dncomponents.UiField;
 import com.dncomponents.client.components.ColumnConfig;
 import com.dncomponents.client.components.Table;
+import com.dncomponents.client.components.core.DnI18e;
 import com.dncomponents.client.components.core.HtmlBinder;
 import com.dncomponents.client.components.core.RendererContext;
 import com.dncomponents.client.components.core.TemplateParser;
@@ -23,6 +24,8 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static com.dncomponents.client.components.core.DnI18e.t;
 
 public class OrdersViewImpl extends AbstractView<OrdersActivity> implements OrdersView {
     private static OrdersViewImpl instance;
@@ -140,9 +143,9 @@ public class OrdersViewImpl extends AbstractView<OrdersActivity> implements Orde
         columnRowExpander.setRowDetailsRenderer((orderDTO, valuePanel) -> {
             Tab tab = new Tab();
             TabItem tabItem = new TabItem(tab);
-            tabItem.setTitle("Products");
+            tabItem.setTitle(DnI18e.get().getValue("products"));
             TabItem<Object> tabItem2 = new TabItem(tab);
-            tabItem2.setTitle("Shipping details");
+            tabItem2.setTitle(DnI18e.get().getValue("shipping_details"));
             tab.addItem(tabItem);
             tab.addItem(tabItem2);
             final HTMLElement table = initOrderDetailsTable(orderDTO.getOrderDetails()).asElement();
@@ -165,14 +168,14 @@ public class OrdersViewImpl extends AbstractView<OrdersActivity> implements Orde
                 .setColumnWidth("80px")
                 .setClazz(String.class)
                 .setCellFactory(c -> new TableCellDate<>())
-                .setName("Order date")
+                .setName(t("order_date"))
                 .build();
 
         ColumnConfig<OrderDTOWrapper, CustomerDTOWrapper> customerColumn = new ColumnConfig.Builder<OrderDTOWrapper, CustomerDTOWrapper>()
                 .setFieldGetter(orderDTO -> orderDTO.getCustomer())
                 .setColumnWidth("180px")
                 .setCellRenderer(r -> r.valuePanel.innerHTML = r.value.getCompany_name())
-                .setName("Customer")
+                .setName(t("customer"))
                 .setFilterPanelFactory(() -> new FilterPanelList(customerDTOS))
                 .build();
 
@@ -180,7 +183,7 @@ public class OrdersViewImpl extends AbstractView<OrdersActivity> implements Orde
                 .setFieldGetter(orderDTO -> orderDTO.getEmployee())
                 .setColumnWidth("150px")
                 .setCellRenderer(r -> r.valuePanel.innerHTML = r.value.toString())
-                .setName("Employee")
+                .setName(t("employee"))
                 .setFilterPanelFactory(() -> new FilterPanelList(employeeDTOS))
                 .build();
 
@@ -188,7 +191,7 @@ public class OrdersViewImpl extends AbstractView<OrdersActivity> implements Orde
                 .setFieldGetter(orderDTO -> orderDTO.getShip_country())
                 .setColumnWidth("80px")
                 .setClazz(String.class)
-                .setName("Ship country")
+                .setName(t("ship_country"))
                 .build();
 
         ordersTable.setControlBar();

@@ -17,12 +17,9 @@ import com.dncomponents.northwind.orders.OrdersPlace;
 import com.dncomponents.northwind.products.ProductsPlace;
 import com.dncomponents.northwind.suppliers.SuppliersPlace;
 import elemental2.core.JsObject;
-import elemental2.dom.DomGlobal;
 import elemental2.dom.HTMLCanvasElement;
 import elemental2.dom.HTMLElement;
 import elemental2.dom.Node;
-import elemental2.webstorage.Storage;
-import elemental2.webstorage.WebStorageWindow;
 import jsinterop.annotations.JsMethod;
 
 import static jsinterop.annotations.JsPackage.GLOBAL;
@@ -37,23 +34,13 @@ public class MainApp implements AcceptsOneElement {
     HtmlBinder binder = HtmlBinder.get(MainApp.class, this);
     @UiField
     DropDown<ItemId> languageDd;
-    Storage storage = WebStorageWindow.of(DomGlobal.window).localStorage;
 
     public MainApp() {
         binder.bind();
         init();
         side.setPlaceManager(placeManager);
         side.expandAll(true);
-        final String language = storage.getItem("language");
-        if (language != null)
-            languageDd.setButtonContent(language);
-        languageDd.addSelectionHandler(event -> {
-                    final String id = event.getSelectedItem().getUserObject().getId();
-                    storage.setItem("language", id);
-                    languageDd.setButtonContent(id);
-                    DomGlobal.location.reload();
-                }
-        );
+        Language.addToDropdown(languageDd);
     }
 
     @JsMethod(namespace = GLOBAL)
