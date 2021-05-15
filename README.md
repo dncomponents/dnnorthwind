@@ -324,4 +324,7 @@ mvn gwt:codeserver
 
 # In another terminal window: 
 mvn spring-boot:run
+
+# open:
+http://localhost:8080
 ```
