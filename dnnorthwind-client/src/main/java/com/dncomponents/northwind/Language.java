@@ -1,6 +1,6 @@
 package com.dncomponents.northwind;
 
-import com.dncomponents.client.components.core.DnI18e;
+import com.dncomponents.client.components.core.DnI18n;
 import com.dncomponents.client.components.core.entities.ItemId;
 import com.dncomponents.client.components.dropdown.DropDown;
 import com.dncomponents.northwind.i18n.AppMessages;
@@ -34,9 +34,9 @@ public class Language {
     public static void setLanguage() {
         String language = getLanguage();
         if (language == null || language.equals("english")) {
-            DnI18e.set(AppMessages.getInstance()); //default language
+            DnI18n.set(AppMessages.getInstance()); //default language
         } else if (language.equals("german")) {
-            DnI18e.set(AppMessages_de.getInstance()); //use this for german translation
+            DnI18n.set(AppMessages_de.getInstance()); //use this for german translation
         }
     }
 

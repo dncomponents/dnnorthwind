@@ -3,7 +3,6 @@ package com.dncomponents.northwind.orders;
 import com.dncomponents.UiField;
 import com.dncomponents.client.components.ColumnConfig;
 import com.dncomponents.client.components.Table;
-import com.dncomponents.client.components.core.DnI18e;
 import com.dncomponents.client.components.core.HtmlBinder;
 import com.dncomponents.client.components.core.RendererContext;
 import com.dncomponents.client.components.core.TemplateParser;
@@ -25,7 +24,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.dncomponents.client.components.core.DnI18e.t;
+import static com.dncomponents.client.components.core.DnI18n.t;
 
 public class OrdersViewImpl extends AbstractView<OrdersActivity> implements OrdersView {
     private static OrdersViewImpl instance;
@@ -143,9 +142,9 @@ public class OrdersViewImpl extends AbstractView<OrdersActivity> implements Orde
         columnRowExpander.setRowDetailsRenderer((orderDTO, valuePanel) -> {
             Tab tab = new Tab();
             TabItem tabItem = new TabItem(tab);
-            tabItem.setTitle(DnI18e.get().getValue("products"));
+            tabItem.setTitle(t("products"));
             TabItem<Object> tabItem2 = new TabItem(tab);
-            tabItem2.setTitle(DnI18e.get().getValue("shipping_details"));
+            tabItem2.setTitle(t("shipping_details"));
             tab.addItem(tabItem);
             tab.addItem(tabItem2);
             final HTMLElement table = initOrderDetailsTable(orderDTO.getOrderDetails()).asElement();

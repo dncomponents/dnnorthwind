@@ -18,7 +18,7 @@ import elemental2.dom.HTMLElement;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-import static com.dncomponents.client.components.core.DnI18e.t;
+import static com.dncomponents.client.components.core.DnI18n.t;
 
 public class SuppliersViewImpl extends AbstractView<SuppliersActivity> implements SuppliersView {
 

@@ -14,7 +14,7 @@ import elemental2.dom.HTMLElement;
 
 import java.util.Arrays;
 
-import static com.dncomponents.client.components.core.DnI18e.t;
+import static com.dncomponents.client.components.core.DnI18n.t;
 
 public class ProductsViewImpl extends AbstractView<ProductsActivity> implements ProductsView {
     private static ProductsViewImpl instance;

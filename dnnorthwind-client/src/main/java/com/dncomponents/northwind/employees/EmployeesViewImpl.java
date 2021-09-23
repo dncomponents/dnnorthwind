@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-import static com.dncomponents.client.components.core.DnI18e.t;
+import static com.dncomponents.client.components.core.DnI18n.t;
 
 
 public class EmployeesViewImpl extends AbstractView<EmployeesActivity> implements EmployeesView {
