@@ -193,7 +193,6 @@ public class OrdersViewImpl extends AbstractView<OrdersActivity> implements Orde
                 .setName(t("ship_country"))
                 .build();
 
-        ordersTable.setControlBar();
         ordersTable.setMultiSorting(true);
         ordersTable.setScrollHeight("600px");
         ordersTable.addColumn(columnRowExpander, idColumn, orderDateColumn,
